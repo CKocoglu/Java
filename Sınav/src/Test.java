@@ -4,38 +4,47 @@ import java.util.Scanner;
 public class Test {
 
 	public static void main(String[] args) {
+		int toplamsonuc=0;
 		Random rand=new Random();
 		Scanner scan=new Scanner(System.in);
-		Dunyalýlar [] Askerler=new Dunyalýlar[500];
+		Dunyalýlar [] dliste=new Dunyalýlar[500];
 		//Dunyalýlar [] Askerler=new Askerler[500];
-		Dunyalýlar [] Ciftciler=new Dunyalýlar[500];
+		//Dunyalýlar [] Ciftciler=new Dunyalýlar[500];
 		
-		Uzaylýlar [] Cyborglar=new Cyborglar[500];
-		Uzaylýlar [] Madenciler=new Madenciler[500];
+		Uzaylýlar [] uliste=new Uzaylýlar[500];
+		//Uzaylýlar [] Madenciler=new Madenciler[500];
 		
 		for(int i=0;i<500;i++) {
 			int a=rand.nextInt(2)+1;
-			//int b=rand.nextInt(10)//silahgucu
-			//int c=rand.nextInt(10);//savunma
-			//int d=rand.nextInt(10);//urunsayýsý;
+			//System.out.println("a="+a);
+			int b=rand.nextInt(10);//silahgucu
+			//System.out.println("silahgcu="+b);
+			int c=rand.nextInt(10);//savunma
+			//System.out.println("savunma="+c);
+			int d=rand.nextInt(10);//urunsayýsý;
+			//System.out.println("urunsayýsý="+d);
 			if(a==1) {
-				 Askerler[i]=new Askerler(rand.nextInt(10),rand.nextInt(10));
+				 dliste[i]=new Askerler(b,c);
 			}
 			else {
-				 Ciftciler[i]=new Ciftciler(rand.nextInt(10),rand.nextInt(10));
+				 dliste[i]=new Ciftciler(d,c);
 			}
 			
 		}
 		for(int i=0;i<500;i++) {
 			int a=rand.nextInt(2)+1;
-			//int b=rand.nextInt(10);//lazergucu
-			//int c=rand.nextInt(10);//savunma
-			//int d=rand.nextInt(10);//madensayýsý;
+			//System.out.println("a"+a);
+			int b=rand.nextInt(10);//lazergucu
+			//System.out.println("lazergucu="+b);
+			int c=rand.nextInt(10);//savunma
+			//System.out.println("savunma="+c);
+			int d=rand.nextInt(10);//madensayýsý;
+			//System.out.println("madensayýsý="+d);
 			if(a==1) {
-				 Cyborglar[i]=new Cyborglar(rand.nextInt(10),rand.nextInt(10));
+				 uliste[i]=new Cyborglar(c,b);
 			}
 			else {
-				 Madenciler[i]=new Madenciler(rand.nextInt(10),rand.nextInt(10));
+				 uliste[i]=new Madenciler(c,d);
 			}
 			
 		}
@@ -45,11 +54,12 @@ public class Test {
 				break;
 			}
 			else {
-				int Dguc=Askerler[i].GucHesapla()+Ciftciler[i].GucHesapla();
-				int Uguc=Cyborglar[i].GucHesapla()+Madenciler[i].GucHesapla();
-				System.out.println(i+".elin sonucu="+(Dguc-Uguc));				
+				int elsonuc=(dliste[i].GucHesapla()-uliste[i].GucHesapla());
+				toplamsonuc=toplamsonuc+elsonuc;
+				System.out.println((i+1)+".elin sonucu="+" "+dliste[i].GucHesapla()+"-"+uliste[i].GucHesapla()+"="+(dliste[i].GucHesapla()-uliste[i].GucHesapla()));				
 			}
 		}
+		System.out.println("Toplam Puan="+toplamsonuc);
 		
 
 	}

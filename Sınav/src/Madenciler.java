@@ -1,6 +1,6 @@
 
 public class Madenciler extends Uzaylılar {
-	int madensayısı;
+	int madensayısı=0;
 	
 	public Madenciler(int savunma,int madensayısı) {
 		super(savunma);

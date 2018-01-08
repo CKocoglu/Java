@@ -1,6 +1,6 @@
 
 public class Cyborglar extends Uzaylýlar {
-	int lazergucu;
+	int lazergucu=0;
 	public Cyborglar(int savunma,int lazergucu) {
 		super(savunma);
 		this.lazergucu=lazergucu;

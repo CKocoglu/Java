@@ -1,6 +1,6 @@
 
 public class Askerler extends Dunyalýlar {
-	int silahgucu;
+	int silahgucu=0;
 	
 	public Askerler(int silahgucu,int savunma) {
 		super(savunma);

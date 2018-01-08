@@ -1,6 +1,6 @@
 
 public class Ciftciler extends Dunyalılar {
-	int urunsayısı;
+	int urunsayısı=0;
 	
 	public Ciftciler(int urunsayısı,int savunma) {
 		super(savunma);
