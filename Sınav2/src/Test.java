@@ -1,23 +1,7 @@
 import java.util.Scanner;
-import java.util.Arrays;
+//import java.util.Arrays;
 public class Test {
-	public static int[] Sýrala(int ürünListesi[]) {
-		int min,temp;
-		for(int i=0;i<ürünListesi.length;i++) {
-			min=i;
-			for(int j=i+1;j<ürünListesi.length;j++) {
-				if(ürünListesi[j].getYýl<ürünListesi[min].getYýl) {
-					min=j;
-					//Arrays.sort(ürünListesi);
-				}
-			}
-			temp=ürünListesi[i];
-			ürünListesi[i]=ürünListesi[min];
-			ürünListesi[min]=temp;
-		}
-		return ürünListesi;
-	}
-
+	
 	public static void main(String[] args) {
 		Scanner scan=new Scanner(System.in);
 		
@@ -25,7 +9,7 @@ public class Test {
 		 
 		
 		for(int i=0;i<ürünListesi.length;i++) {
-			Ürün ürün=new Ürün("","",1,1);
+			Ürün ürün=new Ürün(1,1,"a","b");
 			ürünListesi[i]=ürün;
 		}
 		
@@ -60,8 +44,47 @@ public class Test {
 		}
 		
 		
+		/*public int  Sýrala(int []s) {
+			int min,temp;
+			for(int i=0;i<ürünListesi.length;i++) {
+				min=i;
+				for(int j=i+1;j<ürünListesi.length;j++) {
+					if(s[j].getYýl()<s[min].getYýl()) {
+						min=j;
+						
+					}
+				}
+				temp=s[i];
+				ürünListesi[i]=ürünListesi[min];
+				ürünListesi[min]=temp;
+			}
+			//return ürünListesi;
+		}*/
+		//Array.getShort(ürünListesi, index)
+		//Sýrala(ürünListesi);
+
+		
+		
 		
 	}
-	
+
+	/*private static void Sýrala(Ürün[] ürünListesi) {
+		int min;
+		Ürün temp;
+		for(int i=0;i<ürünListesi.length;i++) {
+			min=i;
+			for(int j=i+1;j<ürünListesi.length;j++) {
+				if(ürünListesi[j].getAy()<ürünListesi[min].getYýl()) {
+					min=j;
+					
+				}
+			}
+			temp=ürünListesi[i];
+			ürünListesi[i]=ürünListesi[min];
+			ürünListesi[min]=temp;
+		}
+		
+	}
+	*/
 
 }

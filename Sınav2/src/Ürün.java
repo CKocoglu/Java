@@ -1,14 +1,15 @@
 
-public class Ürün {
+public class Ürün extends Zaman {
 	private String ürünadı,ürüntürü;
-	private int yıl,ay;
+	//private int yıl,ay;
 	
 	
-	public Ürün(String ürünadı,String ürüntürü,int yıl,int ay) {
+	public Ürün(int yıl,int ay,String ürünadı,String ürüntürü) {
+		super(yıl,ay);
 		this.ürünadı=ürünadı;
 		this.ürüntürü=ürüntürü;
-		this.yıl=yıl;
-		this.ay=ay;
+		//this.yıl=yıl;
+		//this.ay=ay;
 	}
 	public String getÜrünadı() {
 		return ürünadı;
@@ -22,7 +23,7 @@ public class Ürün {
 	public void setÜrüntürü(String ürüntürü) {
 		this.ürüntürü = ürüntürü;
 	}
-	public int getYıl() {
+	/*public int getYıl() {
 		return yıl;
 	}
 	public void setYıl(int yıl) {
@@ -33,7 +34,7 @@ public class Ürün {
 	}
 	public void setAy(int ay) {
 		this.ay = ay;
-	}
+	}*/
 	
 	
 	}
