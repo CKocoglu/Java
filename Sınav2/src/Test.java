@@ -1,7 +1,27 @@
 import java.util.Scanner;
-//import java.util.Arrays;
 public class Test {
 	
+	public static void Sýrala(Ürün[] ürünListesi) {
+		int min;
+		Ürün temp;
+		for(int i=0;i<ürünListesi.length;i++) {
+			min=i;
+			for(int j=i+1;j<ürünListesi.length;j++) {
+				if(ürünListesi[j].getYýl()<ürünListesi[min].getYýl()) {
+					min=j;
+				}
+				else if(ürünListesi[j].getYýl()==ürünListesi[min].getYýl()) {
+					if(ürünListesi[j].getAy()<ürünListesi[min].getAy()) {
+						min=j;
+				}
+			}
+			temp=ürünListesi[i];
+			ürünListesi[i]=ürünListesi[min];
+			ürünListesi[min]=temp;
+		}
+		
+	 }
+	}
 	public static void main(String[] args) {
 		Scanner scan=new Scanner(System.in);
 		
@@ -38,53 +58,16 @@ public class Test {
 		}
 		//Arrays.sort(ürünListesi);
 		for (int i = 0; i < ürünListesi.length; i++) {
-			System.out.println(i+".Ürün adý:"+ürünListesi[i].getÜrünadý()+
+			System.out.println((i+1)+".Ürün adý:"+ürünListesi[i].getÜrünadý()+
 					" Ürün türü:"+ürünListesi[i].getÜrüntürü()+
 					" Son kullanma tarihi:"+ürünListesi[i].getAy()+"."+ürünListesi[i].getYýl());
 		}
-		
-		
-		/*public int  Sýrala(int []s) {
-			int min,temp;
-			for(int i=0;i<ürünListesi.length;i++) {
-				min=i;
-				for(int j=i+1;j<ürünListesi.length;j++) {
-					if(s[j].getYýl()<s[min].getYýl()) {
-						min=j;
-						
-					}
-				}
-				temp=s[i];
-				ürünListesi[i]=ürünListesi[min];
-				ürünListesi[min]=temp;
-			}
-			//return ürünListesi;
-		}*/
-		//Array.getShort(ürünListesi, index)
-		//Sýrala(ürünListesi);
-
-		
-		
-		
-	}
-
-	/*private static void Sýrala(Ürün[] ürünListesi) {
-		int min;
-		Ürün temp;
-		for(int i=0;i<ürünListesi.length;i++) {
-			min=i;
-			for(int j=i+1;j<ürünListesi.length;j++) {
-				if(ürünListesi[j].getAy()<ürünListesi[min].getYýl()) {
-					min=j;
-					
-				}
-			}
-			temp=ürünListesi[i];
-			ürünListesi[i]=ürünListesi[min];
-			ürünListesi[min]=temp;
+		Sýrala(ürünListesi);
+		System.out.println("---------------");
+		for (int i = 0; i < ürünListesi.length; i++) {
+			System.out.println((i+1)+".Ürün adý:"+ürünListesi[i].getÜrünadý()+
+					" Ürün türü:"+ürünListesi[i].getÜrüntürü()+
+					" Son kullanma tarihi:"+ürünListesi[i].getAy()+"."+ürünListesi[i].getYýl());
 		}
-		
 	}
-	*/
-
 }
